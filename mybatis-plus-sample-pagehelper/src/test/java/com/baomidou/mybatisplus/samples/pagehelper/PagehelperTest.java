@@ -23,6 +23,16 @@ class PagehelperTest {
 
     // mp 与 pagehelper 存在依赖 jsqlparser 冲突，不建议混用
 
+
+    @Test
+    void getAllUser(){
+        List<People> allUsers = mapper.getAllUsers("sys_user", User.class);
+        for(People user : allUsers) {
+            System.out.println(user);
+        }
+    }
+
+
     @Test
     void test() {
 //        Page<User> mpPage = mapper.selectPage(new Page<>(1, 2), Wrappers.<User>query().eq("id", 1));

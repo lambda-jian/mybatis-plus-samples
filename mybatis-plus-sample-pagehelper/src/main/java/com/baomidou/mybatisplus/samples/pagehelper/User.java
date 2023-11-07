@@ -9,7 +9,7 @@ import lombok.Data;
  */
 @Data
 @TableName("sys_user")
-public class User {
+public class User implements People{
 
     private Long id;
 

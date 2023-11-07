@@ -7,7 +7,7 @@ import lombok.Data;
  * @since 2019-06-12
  */
 @Data
-public class Children {
+public class Children implements People{
     private Long id;
     private String name;
     private Long userId;

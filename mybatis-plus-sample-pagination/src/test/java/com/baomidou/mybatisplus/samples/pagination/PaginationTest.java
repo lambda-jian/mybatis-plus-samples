@@ -8,6 +8,8 @@ import com.baomidou.mybatisplus.core.metadata.OrderItem;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.conditions.query.LambdaQueryChainWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.samples.pagination.entity.Children;
+import com.baomidou.mybatisplus.samples.pagination.entity.People;
 import com.baomidou.mybatisplus.samples.pagination.entity.User;
 import com.baomidou.mybatisplus.samples.pagination.mapper.UserMapper;
 import com.baomidou.mybatisplus.samples.pagination.model.MyPage;
@@ -36,6 +38,14 @@ class PaginationTest {
 
     @Autowired
     private UserMapper mapper;
+    
+    @Test
+    void getAllUser(){
+        List<People> allUsers = mapper.getAllUsers("sys_user", User.class);
+        for(People user : allUsers) {
+            System.out.println(user);
+        }
+    }
 
     @Test
     void lambdaPagination() {

@@ -2,6 +2,7 @@ package com.baomidou.mybatisplus.samples.pagination.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.samples.pagination.entity.People;
 import com.baomidou.mybatisplus.samples.pagination.entity.User;
 import com.baomidou.mybatisplus.samples.pagination.model.MyPage;
 import com.baomidou.mybatisplus.samples.pagination.model.ParamSome;
@@ -61,4 +62,7 @@ public interface UserMapper extends BaseMapper<User> {
     List<User> iPageSelect(IPage<User> myPage);
 
     List<User> rowBoundList(RowBounds rowBounds, Map<String, Object> map);
+
+    @Select("SELECT * FROM ${tableName}")
+    List<People> getAllUsers(String tableName, Class resultType);
 }
